@@ -14,17 +14,22 @@
         <main>
             <div class="container">
                 <div class="row">
+
+                    @foreach ($trains as $train)
                     <div class="col text-center">
 
                         <div class="card">
                             <div class="card-body">
-                                <img src="{{ Vite::asset('resources/img/laravel.png') }}" alt="">
-
-                                <h1 class="card-title">Laravel 9 + Bootstrap Template</h1>
+                                <h3> Codice Treno: {{ $train->Codice_treno }}</h3>
+                                <p>In partenza da: {{ $train->Stazione_di_partenza }}</p>
+                                <p>In arrivo a: {{ $train->Stazione_di_arrivo }}</p>
+                                <p>In data: {{ $train->Data }}</p>
                             </div>
                         </div>
 
                     </div>
+                    @endforeach
+                    
                 </div>
             </div>
         </main>
